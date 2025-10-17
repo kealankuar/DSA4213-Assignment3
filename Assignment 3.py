@@ -214,7 +214,7 @@ plt.tight_layout()
 plt.savefig("results_comparison.png")
 print("Plot saved to results_comparison.png")
 
-# NEW: Plotting all training histories in a single figure
+#Plotting all training histories in a single figure
 fig, axes = plt.subplots(2, 2, figsize=(15, 10))
 axes = axes.flatten()
 fig.suptitle('Training and Validation Loss Across Models', fontsize=16)
@@ -227,7 +227,7 @@ for i, (model_name, trainer) in enumerate(all_trainers.items()):
     
     # Plot Training Loss
     axes[i].plot(train_metrics['step'], train_metrics['loss'], label='Training Loss')
-    # Plot Validation Loss on a secondary y-axis if needed, but plotting on same is fine
+    # Plot Validation Loss
     axes[i].plot(eval_metrics['step'], eval_metrics['eval_loss'], label='Validation Loss', marker='o', linestyle='--')
     
     axes[i].set_title(model_name)
